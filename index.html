@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!--文字コードをセット-->
+        <meta charset="utf-8" />
+        <!--表示タイマー用のjsファイル-->
+        <script src="timer.js"></script>
+        <!--ページタイトル-->
+	    <title>TechnoTUT Demo</title>
+        <!--CSSの読み込み-->
+        <link rel="stylesheet" href="style.css">
+        <!--自動再読み込み-->
+        <meta http-equiv="refresh" content="18000;">
+    </head>
+    <body>
+        <div>
+            <div class="video-box">
+                <video class="dtimer" data-sh="0" data-sm="0" data-eh="11" data-em="59" data-es="59" id="video" muted autoplay loop>
+                <source src="/background/human.mp4">
+                </video>
+                <video class="dtimer" data-sh="12" data-sm="0" data-eh="17" data-em="59" data-es="59" id="video" muted autoplay loop>
+                <source src="/background/mirror.mp4">
+                </video>
+                <video class="dtimer" data-sh="18" data-sm="0" data-eh="23" data-em="59" data-es="59" id="video" muted autoplay loop>
+                <source src="/background/led.mp4">
+                </video>
+            </div>
+            <div>
+                <img id="logo" src="/image/Logo_Bred.png"></img>
+            </div>
+
+            <div>
+            <h1 class="dtimer" data-sh="0" data-sm="0" data-eh="0" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="0" data-sm="0" data-eh="0" data-em="29" data-es="59">0:00 - 0:30</h2>
+            <h1 class="dtimer" data-sh="0" data-sm="30" data-eh="0" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="0" data-sm="30" data-eh="0" data-em="59" data-es="59">0:30 - 1:00</h2>
+            <h1 class="dtimer" data-sh="1" data-sm="0" data-eh="1" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="1" data-sm="0" data-eh="1" data-em="29" data-es="59">1:00 - 1:30</h2>
+            <h1 class="dtimer" data-sh="1" data-sm="30" data-eh="1" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="1" data-sm="30" data-eh="1" data-em="59" data-es="59">1:30 - 2:00</h2>
+            <h1 class="dtimer" data-sh="2" data-sm="0" data-eh="2" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="2" data-sm="0" data-eh="2" data-em="29" data-es="59">2:00 - 2:30</h2>
+            <h1 class="dtimer" data-sh="2" data-sm="30" data-eh="2" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="2" data-sm="30" data-eh="2" data-em="59" data-es="59">2:30 - 3:00</h2>
+            <h1 class="dtimer" data-sh="3" data-sm="0" data-eh="3" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="3" data-sm="0" data-eh="3" data-em="29" data-es="59">3:00 - 3:30</h2>
+            <h1 class="dtimer" data-sh="3" data-sm="30" data-eh="3" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="3" data-sm="30" data-eh="3" data-em="59" data-es="59">3:30 - 4:00</h2>
+            <h1 class="dtimer" data-sh="4" data-sm="0" data-eh="4" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="4" data-sm="0" data-eh="4" data-em="29" data-es="59">4:00 - 4:30</h2>
+            <h1 class="dtimer" data-sh="4" data-sm="30" data-eh="4" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="4" data-sm="30" data-eh="4" data-em="59" data-es="59">4:30 - 5:00</h2>
+            <h1 class="dtimer" data-sh="5" data-sm="0" data-eh="5" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="5" data-sm="0" data-eh="5" data-em="29" data-es="59">5:00 - 5:30</h2>
+            <h1 class="dtimer" data-sh="5" data-sm="30" data-eh="5" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="5" data-sm="30" data-eh="5" data-em="59" data-es="59">5:30 - 6:00</h2>
+            <h1 class="dtimer" data-sh="6" data-sm="0" data-eh="6" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="6" data-sm="0" data-eh="6" data-em="29" data-es="59">6:00 - 6:30</h2>
+            <h1 class="dtimer" data-sh="6" data-sm="30" data-eh="6" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="6" data-sm="30" data-eh="6" data-em="59" data-es="59">6:30 - 7:00</h2>
+            <h1 class="dtimer" data-sh="7" data-sm="0" data-eh="7" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="7" data-sm="0" data-eh="7" data-em="29" data-es="59">7:00 - 7:30</h2>
+            <h1 class="dtimer" data-sh="7" data-sm="30" data-eh="7" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="7" data-sm="30" data-eh="7" data-em="59" data-es="59">7:30 - 8:00</h2>
+            <h1 class="dtimer" data-sh="8" data-sm="0" data-eh="8" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="8" data-sm="0" data-eh="8" data-em="29" data-es="59">8:00 - 8:30</h2>
+            <h1 class="dtimer" data-sh="8" data-sm="30" data-eh="8" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="8" data-sm="30" data-eh="8" data-em="59" data-es="59">8:30 - 9:00</h2>
+            <h1 class="dtimer" data-sh="9" data-sm="0" data-eh="9" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="9" data-sm="0" data-eh="9" data-em="29" data-es="59">9:00 - 9:30</h2>
+            <h1 class="dtimer" data-sh="9" data-sm="30" data-eh="9" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="9" data-sm="30" data-eh="9" data-em="59" data-es="59">9:30 - 10:00</h2>
+            <h1 class="dtimer" data-sh="10" data-sm="0" data-eh="10" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="10" data-sm="0" data-eh="10" data-em="29" data-es="59">10:00 - 10:30</h2>
+            <h1 class="dtimer" data-sh="10" data-sm="30" data-eh="10" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="10" data-sm="30" data-eh="10" data-em="59" data-es="59">10:30 - 11:00</h2>
+            <h1 class="dtimer" data-sh="11" data-sm="0" data-eh="11" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="11" data-sm="0" data-eh="11" data-em="29" data-es="59">11:00 - 11:30</h2>
+            <h1 class="dtimer" data-sh="11" data-sm="30" data-eh="11" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="11" data-sm="30" data-eh="11" data-em="59" data-es="59">11:30 - 12:00</h2>
+            <h1 class="dtimer" data-sh="12" data-sm="0" data-eh="12" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="12" data-sm="0" data-eh="12" data-em="29" data-es="59">12:00 - 12:30</h2>
+            <h1 class="dtimer" data-sh="12" data-sm="30" data-eh="12" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="12" data-sm="30" data-eh="12" data-em="59" data-es="59">12:30 - 13:00</h2>
+            <h1 class="dtimer" data-sh="13" data-sm="0" data-eh="13" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="13" data-sm="0" data-eh="13" data-em="29" data-es="59">13:00 - 13:30</h2>
+            <h1 class="dtimer" data-sh="13" data-sm="30" data-eh="13" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="13" data-sm="30" data-eh="13" data-em="59" data-es="59">13:30 - 14:00</h2>
+            <h1 class="dtimer" data-sh="14" data-sm="0" data-eh="14" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="14" data-sm="0" data-eh="14" data-em="29" data-es="59">14:00 - 14:30</h2>
+            <h1 class="dtimer" data-sh="14" data-sm="30" data-eh="14" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="14" data-sm="30" data-eh="14" data-em="59" data-es="59">14:30 - 15:00</h2>
+            <h1 class="dtimer" data-sh="15" data-sm="0" data-eh="15" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="15" data-sm="0" data-eh="15" data-em="29" data-es="59">15:00 - 15:30</h2>
+            <h1 class="dtimer" data-sh="15" data-sm="30" data-eh="15" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="15" data-sm="30" data-eh="15" data-em="59" data-es="59">15:30 - 16:00</h2>
+            <h1 class="dtimer" data-sh="16" data-sm="0" data-eh="16" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="16" data-sm="0" data-eh="16" data-em="29" data-es="59">16:00 - 16:30</h2>
+            <h1 class="dtimer" data-sh="16" data-sm="30" data-eh="16" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="16" data-sm="30" data-eh="16" data-em="59" data-es="59">16:30 - 17:00</h2>
+            <h1 class="dtimer" data-sh="17" data-sm="0" data-eh="17" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="17" data-sm="0" data-eh="17" data-em="29" data-es="59">17:00 - 17:30</h2>
+            <h1 class="dtimer" data-sh="17" data-sm="30" data-eh="17" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="17" data-sm="30" data-eh="17" data-em="59" data-es="59">17:30 - 18:00</h2>
+            <h1 class="dtimer" data-sh="18" data-sm="0" data-eh="18" data-em="29" data-es="59">DJ DDlia</h1>
+            <h2 class="dtimer" data-sh="18" data-sm="0" data-eh="18" data-em="29" data-es="59">18:00 - 18:30</h2>
+            <h1 class="dtimer" data-sh="18" data-sm="30" data-eh="18" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="18" data-sm="30" data-eh="18" data-em="59" data-es="59">18:30 - 19:00</h2>
+            <h1 class="dtimer" data-sh="19" data-sm="0" data-eh="19" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="19" data-sm="0" data-eh="19" data-em="29" data-es="59">19:00 - 19:30</h2>
+            <h1 class="dtimer" data-sh="19" data-sm="30" data-eh="19" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="19" data-sm="30" data-eh="19" data-em="59" data-es="59">19:30 - 20:00</h2>
+            <h1 class="dtimer" data-sh="20" data-sm="0" data-eh="20" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="20" data-sm="0" data-eh="20" data-em="29" data-es="59">20:00 - 20:30</h2>
+            <h1 class="dtimer" data-sh="20" data-sm="30" data-eh="20" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="20" data-sm="30" data-eh="20" data-em="59" data-es="59">20:30 - 21:00</h2>
+            <h1 class="dtimer" data-sh="21" data-sm="0" data-eh="21" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="21" data-sm="0" data-eh="21" data-em="29" data-es="59">21:00 - 21:30</h2>
+            <h1 class="dtimer" data-sh="21" data-sm="30" data-eh="21" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="21" data-sm="30" data-eh="21" data-em="59" data-es="59">21:30 - 22:00</h2>
+            <h1 class="dtimer" data-sh="22" data-sm="0" data-eh="22" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="22" data-sm="0" data-eh="22" data-em="29" data-es="59">22:00 - 22:30</h2>
+            <h1 class="dtimer" data-sh="22" data-sm="30" data-eh="22" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="22" data-sm="30" data-eh="22" data-em="59" data-es="59">22:30 - 23:00</h2>
+            <h1 class="dtimer" data-sh="23" data-sm="0" data-eh="23" data-em="29" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="23" data-sm="0" data-eh="23" data-em="29" data-es="59">23:00 - 23:30</h2>
+            <h1 class="dtimer" data-sh="23" data-sm="30" data-eh="23" data-em="59" data-es="59">DJ ESU</h1>
+            <h2 class="dtimer" data-sh="23" data-sm="30" data-eh="23" data-em="59" data-es="59">23:30 - 0:00</h2>
+            </div>
+        </div>
+    </body>
+</html>
