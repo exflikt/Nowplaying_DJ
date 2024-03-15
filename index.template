@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!--文字コードをセット-->
+        <meta charset="utf-8" />
+        <!--表示タイマー用のjsファイル-->
+        <script src="timer.js"></script>
+        <!--ページタイトル等-->
+        <title>TechnoTUT NOWPLAYING</title>
+        <meta name="description" content="TechnoTUT NOWPLAYING DJ">
+        <meta property="og:title" content="TechnoTUT NOWPLAYING">
+        <meta property="og:description" content="Display the DJ name of TechnoTUT.">
+        <meta property="og:image" content="https://f4.bcbits.com/img/0032011067_10.jpg">
+        <meta property="og:url" content="https://event.technotut.net/">
+        <link rel="icon" href="https://f4.bcbits.com/img/0032011067_10.jpg">
+        <!--CSSの読み込み-->
+        <link rel="stylesheet" href="style.css">
+        <!--自動再読み込み-->
+        <!--meta http-equiv="refresh" content="18000;"-->
+    </head>
+    <body>
+        <div>
+            <div class="video-box">
+                <video class="dtimer" data-sh="0" data-sm="0" data-eh="11" data-em="59" data-es="59" id="video" muted autoplay loop>
+                <source src="/background/wave.mp4">
+                </video>
+                <video class="dtimer" data-sh="12" data-sm="0" data-eh="17" data-em="59" data-es="59" id="video" muted autoplay loop>
+                <source src="/background/star.mp4">
+                </video>
+                <video class="dtimer" data-sh="18" data-sm="0" data-eh="23" data-em="59" data-es="59" id="video" muted autoplay loop>
+                <source src="/background/ball.mp4">
+                </video>
+            </div>
+            <div>
+                <img id="logo" src="/image/Logo_Bblack.png"></img>
+            </div>
+
+            <div>
+                <h1 class="dtimer" data-sh="0" data-sm="0" data-eh="8" data-em="59" data-es="59">Please wait...</h1>
+                <h2 class="dtimer" data-sh="0" data-sm="0" data-eh="8" data-em="59" data-es="59">Start at 9:00</h2>
+                <h3 class="dtimer" data-sh="9" data-sm="0" data-eh="16" data-em="59" data-es="59">NOW PLAYING</h3>
+
+{{.}}
+
+                <h1 class="dtimer" data-sh="18" data-sm="0" data-eh="23" data-em="59" data-es="59"></h1>
+                <h2 class="dtimer" data-sh="18" data-sm="0" data-eh="23" data-em="59" data-es="59">The event has closed.<br>Thank you for coming!</h2>
+            </div>
+        </div>
+    </body>
+</html>
