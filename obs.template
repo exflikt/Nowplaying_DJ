@@ -27,14 +27,7 @@
     <body>
         <div>
             <div>
-                <h1 class="dtimer" data-sh="0" data-sm="0" data-eh="8" data-em="59" data-es="59">Please wait...</h1>
-                <h2 class="dtimer" data-sh="0" data-sm="0" data-eh="8" data-em="59" data-es="59">Start at 9:00</h2>
-                <h3 class="dtimer" data-sh="9" data-sm="0" data-eh="16" data-em="59" data-es="59">NOW PLAYING</h3>
-
 {{.}}
-
-                <h1 class="dtimer" data-sh="18" data-sm="0" data-eh="23" data-em="59" data-es="59"></h1>
-                <h2 class="dtimer" data-sh="18" data-sm="0" data-eh="23" data-em="59" data-es="59">The event has closed.<br>Thank you for coming!</h2>
             </div>
         </div>
     </body>

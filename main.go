@@ -10,17 +10,34 @@ import (
 	"strings"
 )
 
-const TIMETABLE_TEMPLATE = `{{range $data := .}}<h1 class="dtimer" data-sh="{{$data.Sh}}" data-sm="{{$data.Sm}}" data-eh="{{$data.Eh}}" data-em="{{$data.Em}}" data-es="{{$data.Es}}">{{$data.Dj_name}}</h1>
-<h2 class="dtimer" data-sh="{{$data.Sh}}" data-sm="{{$data.Sm}}" data-eh="{{$data.Eh}}" data-em="{{$data.Em}}" data-es="{{$data.Es}}">{{$data.Timeframe}}</h2>
+const TIMETABLE_TEMPLATE = `{{with index .Preamble 0}}
+<h1 class="dtimer" data-sh="0" data-sm="0" data-eh="{{.Eh}}" data-em="{{.Em}}" data-es="59">Please wait...</h1>
+<h2 class="dtimer" data-sh="0" data-sm="0" data-eh="{{.Eh}}" data-em="{{.Em}}" data-es="59">{{.Timeframe}}</h2>
+{{end}}
+{{with index .Preamble 1}}
+<h3 class="dtimer" data-sh="{{.Sh}}" data-sm="{{.Sm}}" data-eh="{{.Eh}}" data-em="{{.Em}}" data-es="59">NOW PLAYING</h3>
+{{end}}
+{{range .Body}}
+<h1 class="dtimer" data-sh="{{.Sh}}" data-sm="{{.Sm}}" data-eh="{{.Eh}}" data-em="{{.Em}}" data-es="59">{{.DjName}}</h1>
+<h2 class="dtimer" data-sh="{{.Sh}}" data-sm="{{.Sm}}" data-eh="{{.Eh}}" data-em="{{.Em}}" data-es="59">{{.Timeframe}}</h2>
+{{end}}
+{{with .Postamble}}
+<h1 class="dtimer" data-sh="{{.Sh}}" data-sm="{{.Sm}}" data-eh="23" data-em="59" data-es="59"></h1>
+<h2 class="dtimer" data-sh="{{.Sh}}" data-sm="{{.Sm}}" data-eh="23" data-em="59" data-es="59">The event has closed.<br>Thank you for coming!</h2>
 {{end}}`
+
+type TimeTable struct {
+	Preamble  [2]TableData
+	Body     []TableData
+	Postamble TableData
+}
 
 type TableData struct {
 	Sh        uint8
 	Sm        uint8
 	Eh        uint8
 	Em        uint8
-	Es        uint8
-	Dj_name   string
+	DjName    string
 	Timeframe string
 }
 
@@ -48,7 +65,7 @@ func read_csv_records(filepath string) [][]string {
 	return records
 }
 
-func records_to_timetable(records [][]string) []TableData {
+func records_to_timetable(records [][]string) TimeTable {
 	split_time := func(time string) (string, string) {
 		hhmm := strings.SplitN(time, ":", 2)
 		if len(hhmm) != 2 {
@@ -91,7 +108,7 @@ func records_to_timetable(records [][]string) []TableData {
 		return
 	}
 
-	timetable := make([]TableData, len(records)-1)
+	body := make([]TableData, len(records)-1)
 	for i := 1; i < len(records); i++ {
 		start, end, dj_name := records[i][0], records[i][1], records[i][2]
 
@@ -100,20 +117,45 @@ func records_to_timetable(records [][]string) []TableData {
 
 		eh, em := one_min_prev(end_hh, end_mm)
 
-		timetable[i-1] = TableData{
+		body[i-1] = TableData{
 			Sh:        start_hh,
 			Sm:        start_mm,
 			Eh:        eh,
 			Em:        em,
-			Es:        59,
-			Dj_name:   dj_name,
+			DjName:    dj_name,
 			Timeframe: fmt.Sprintf("%d:%02d - %d:%02d", start_hh, start_mm, end_hh, end_mm),
 		}
 	}
-	return timetable
+
+	event_start := records[1][0]
+	event_start_hh, event_start_mm := parse_time(split_time(event_start))
+	event_sh, event_sm := one_min_prev(event_start_hh, event_start_mm)
+	event_end := records[len(records)-1][1]
+	event_end_hh, event_end_mm := parse_time(split_time(event_end))
+	event_eh, event_em := one_min_prev(event_end_hh, event_end_mm)
+	return TimeTable{
+		Preamble: [2]TableData{
+			{
+				Eh:        event_sh,
+				Em:        event_sm,
+				Timeframe: fmt.Sprintf("Start at %d:%02d", event_start_hh, event_start_mm),
+			},
+			{
+				Sh: event_start_hh,
+				Sm: event_start_mm,
+				Eh: event_eh,
+				Em: event_em,
+			},
+		},
+		Body: body,
+		Postamble: TableData{
+			Sh: event_end_hh,
+			Sm: event_end_mm,
+		},
+	}
 }
 
-func to_timetable_html(timetable []TableData) string {
+func to_timetable_html(timetable TimeTable) string {
 	var timetable_html strings.Builder
 	timetable_tmpl, err := template.New("timetable").Parse(TIMETABLE_TEMPLATE)
 	if err != nil {
